@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
+<app-header></app-header>
+<section class="content page-calendar">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Book Appointment
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-4 col-xl-4"></div>
+            <div class="col-md-12 col-lg-8 col-xl-8">
+                <div class="card" style="background-color:transparent">
+                    <div class="body"></div>
+                </div>
+                <div class="card" style="background-color:transparent">
+                    <div class="body">
+                        <div id="calendar" class="fc fc-unthemed fc-ltr">
+                            <div class="fc-toolbar fc-header-toolbar">
+                                <div class="fc-left"><button type="button"
+                                        class="fc-prev-button fc-button fc-state-default fc-corner-left fc-corner-right"><span
+                                            class="fc-icon fc-icon-left-single-arrow"
+                                            (click)="previousDay()"></span></button></div>
+                                <div class="fc-right"><button type="button"
+                                        class="fc-next-button fc-button fc-state-default fc-corner-left fc-corner-right"><span
+                                            class="fc-icon fc-icon-right-single-arrow"
+                                            (click)="nextDay()"></span></button>
+                                </div>
+                                <div class="fc-center">
+                                    <h2>{{today | date:'MMMM'}} {{today | date:'dd'}},{{today | date:'yyyy'}}</h2>
+                                </div>
+                                <div class="fc-clear"></div>
+                            </div>
+                            <div class="fc-view-container">
+                                <div class="fc-view fc-agendaDay-view fc-agenda-view">
+                                    <table class="">
+                                        <thead class="fc-head">
+                                            <tr>
+                                                <td class="fc-head-container fc-widget-header">
+                                                    <div class="fc-row fc-widget-header">
+                                                        <table class="">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="fc-day-header fc-widget-header fc-wed fc-past"
+                                                                        data-date="2018-08-01">
+                                                                        <span>{{today | date:'EEEE'}}</span></th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fc-body">
+                                            <tr>
+                                                <td class="fc-widget-content">
+                                                    <hr class="fc-divider fc-widget-header">
+                                                    <div class="fc-scroller fc-time-grid-container"
+                                                        style=" height: 200px;">
+                                                        <div class="fc-time-grid fc-unselectable">
+                                                            <div class="fc-slats">
+                                                                <table class="">
+                                                                    <tbody>
+                                                                        <tr id="09:00" data-time="09:00:00" (click)="BookRdv('09:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>9am</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="10:00" data-time="10:00:00"(click)="BookRdv('10:00')" >
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>10am</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="11:00" data-time="11:00:00" (click)="BookRdv('11:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>11am</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr style="background: tomato;">
+
+                                                                            <td colspan="2" style="text-align: center">Lunch Break</td>
+                                                                        </tr>
+                                                                        <tr id="13:00" data-time="13:00:00" (click)="BookRdv('13:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>1pm</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="14:00" data-time="14:00:00" (click)="BookRdv('14:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>2pm</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="15:00" data-time="15:00:00" (click)="BookRdv('15:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>3pm</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="16:00" data-time="16:00:00" (click)="BookRdv('16:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>4pm</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                        <tr id="17:00" data-time="17:00:00" (click)="BookRdv('17:00')">
+                                                                            <td class="fc-axis fc-time fc-widget-content"
+                                                                                style="width:50px">
+                                                                                <span>5pm</span></td>
+                                                                            <td class="fc-widget-content"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="assets/js/pages/calendar/calendar.js"></script>
+<script src="assets/bundles/fullcalendarscripts.bundle.js"></script>

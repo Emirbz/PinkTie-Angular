@@ -1,0 +1,98 @@
+
+  <!-- Page Loader -->
+
+  <!-- Overlay For Sidebars -->
+
+  <!-- Top Bar -->
+  <nav class="navbar p-l-5 p-r-5">
+      <ul class="nav navbar-nav navbar-left">
+          <li>
+              <div class="navbar-header">
+                  <a href="javascript:void(0);" class="bars"></a>
+                  <a class="navbar-brand"><img src="../assets/images/pinktielogo.png" width="40" ></a>
+              </div>
+          </li>
+          <li class="hidden-md-down" id="rdvD"><a href="rdv2" title="Events"><i class="zmdi zmdi-calendar"></i></a></li>
+          <li class="hidden-md-down"><a href="inbox" title="Inbox"><i class="zmdi zmdi-email"></i></a></li>
+          <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i>
+              <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+              </a>
+              <ul class="dropdown-menu pullDown">
+                  <li class="body">
+                      <ul class="menu list-unstyled">
+                          <table class="table m-b-0 table-hover">
+                              <tbody>
+                                <tr *ngFor="let notif of rdvs" >
+                          <li>
+                              <a href="javascript:void(0);">
+                                  <div class="media">
+                                      <img class="media-object" src="../assets/images/xs/avatar2.jpg" alt="">
+                                      <div class="media-body">
+                                          <span class="name">{{notif.rdv.patientId.name}} {{notif.rdv.patientId.lastname}}</span>
+                                          <span class="message">{{notif.rdv.date | date:'medium'}}</span>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>
+                          </tr>
+                          </tbody>
+                          </table>
+                      </ul>
+                  </li>
+                  <li class="footer"> <a href="javascript:void(0);" (click)="DeleteNotif()">View All</a> </li>
+              </ul>
+
+          <li class="hidden-sm-down">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search...">
+                  <span class="input-group-addon">
+                      <i class="zmdi zmdi-search"></i>
+                  </span>
+              </div>
+          </li>
+          <li class="float-right">
+              <a href="javascript:void(0);" class="fullscreen hidden-sm-down" data-provide="fullscreen" data-close="true"><i class="zmdi zmdi-fullscreen"></i></a>
+              <a (click)="logout()" href="" title="Logout" class="mega-menu" data-close="true"><i class="zmdi zmdi-power"></i></a>
+              <a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
+          </li>
+      </ul>
+  </nav>
+  <!-- Left Sidebar -->
+  <aside id="leftsidebar" class="sidebar">
+
+      <div class="tab-content">
+          <div class="tab-pane stretchRight active" id="dashboard">
+              <div class="menu">
+                  <ul class="list">
+                    <br>
+                      <li>
+                          <div class="user-info">
+                                <div id="inf" hidden>
+                                    <a href ="completedoctor"><i class = "material-icons" >info</i> complete your profile </a>
+                                    </div>
+                              <div class="image"><a><img src="../assets/images/profile_av.jpg" alt="User"></a></div>
+                              <div class="detail">
+                                  <h4>Dr. {{info2.username}}</h4>
+                                  <small>Cancerologue</small>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="header">MAIN</li>
+                      <li class="active open"><a href="/home"><i class="zmdi zmdi-home"></i><span>Home</span></a></li>
+
+                      <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
+                          <ul class="ml-menu">
+                              <li id = "allp"><a href="listpatients">All Patients</a></li>
+                              <li id="addp"><a href="addpatient">Add Patient</a></li>
+                              <li id="patientinbox"><a href="patientinbox">Inbox</a></li>
+
+
+                          </ul>
+                      </li>
+
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+  </aside>

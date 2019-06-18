@@ -1,0 +1,117 @@
+
+<body class="theme-cyan authentication sidebar-collapse">
+  <!-- Navbar -->
+  <div *ngIf="isSignedUp; else signupForm">
+      Your registration is successful. Please login!
+    </div>
+    <ng-template #signupForm>
+  <!-- End Navbar -->
+  <div class="page-header" style="background-image:url(../assets/images/login.jpg)">
+      <div class="page-header-image" style="background-image:url(../assets/images/login.jpg)"></div>
+      <div class="container">
+          <div class="col-md-12 content-center">
+              <div class="card-plain">
+                  <form class="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                      <div class="header">
+                          <div class="logo-container">
+                              <img src="https://thememakker.com/templates/oreo/hospital/html/images/logo.svg" alt="">
+                          </div>
+                          <h5>Update Profil</h5>
+                          <span></span>
+                      </div>
+                      <div class="content">
+                              <div class="input-group">
+                                      <input type="text" class="form-control" placeholder="Enter Your Name" name="name" [(ngModel)]="form.name" #name="ngModel" required>
+                                      <span class="input-group-addon">
+                                          <i class="zmdi zmdi-account-circle"></i>
+                                      </span>
+                              </div>
+                              <div *ngIf="f.submitted && name.invalid">
+                                      <div *ngIf="name.errors.required">Name is required</div>
+                                    </div>
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" placeholder="Enter Your Lastname" name="lastname" [(ngModel)]="form.lastname" #lastname="ngModel" required>
+                                      <span class="input-group-addon">
+                                          <i class="zmdi zmdi-account-circle"></i>
+                                      </span>
+                              </div>
+                              <div *ngIf="f.submitted && name.invalid">
+                                      <div *ngIf="lastname.errors.required">Lastname is required</div>
+                                    </div>
+                          <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Enter User Name" name="username" [(ngModel)]="form.username" #username="ngModel"
+                              required>
+                              <span class="input-group-addon">
+                                  <i class="zmdi zmdi-account-circle"></i>
+                              </span>
+                          </div>
+                          <div *ngIf="f.submitted && username.invalid">
+                                  <div *ngIf="username.errors.required">Username is required</div>
+                                </div>
+                          <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="form.email" #email="ngModel" required email>
+                              <span class="input-group-addon">
+                                  <i class="zmdi zmdi-email"></i>
+                              </span>
+                          </div>
+                          <div *ngIf="f.submitted && email.invalid">
+                                  <div *ngIf="email.errors.required">Email is required</div>
+                                  <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                                </div>
+                          <div class="input-group">
+                              <input type="password" placeholder="Password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+                              required minlength="6" />
+                              <span class="input-group-addon">
+                                  <i class="zmdi zmdi-lock"></i>
+                              </span>
+                          </div>
+                          <div *ngIf="f.submitted && password.invalid">
+                                  <div *ngIf="password.errors.required">Password is required</div>
+                                  <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                      </div>
+                      <div class="checkbox">
+                              <input id="terms" type="checkbox">
+                              <label for="terms">
+                                      I read and agree to the <a href="javascript:void(0);">terms of usage</a>
+                              </label>
+                          </div>
+                      <div class="footer text-center">
+                          <button  class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">UPDATE</button>
+                          <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">
+                                  Signup failed!<br/>{{errorMessage}}
+                                </div>
+                          <h5><a class="link" href="sign-in.html">You already have a membership?</a></h5>
+                      </div>
+                  </form>x
+              </div>
+          </div>
+      </div>
+      <footer class="footer">
+          <div class="container">
+              <nav>
+                  <ul>
+                      <li><a href="http://thememakker.com/contact/" target="_blank">Contact Us</a></li>
+                      <li><a href="http://thememakker.com/about/" target="_blank">About Us</a></li>
+                      <li><a href="javascript:void(0);">FAQ</a></li>
+                  </ul>
+              </nav>
+              <div class="copyright">
+                  &copy;
+                  <script>
+                      document.write(new Date().getFullYear())
+                  </script>,
+                  <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+</ng-template>
+
+
+  <script>
+     $(".navbar-toggler").on('click',function() {
+      $("html").toggleClass("nav-open");
+  });
+  </script>

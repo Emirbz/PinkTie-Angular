@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
+
+<div id="calendar" class="fc fc-unthemed fc-ltr">
+  <div class="fc-toolbar fc-header-toolbar">
+    <div class="fc-left"><button type="button"
+        class="fc-prev-button fc-button fc-state-default fc-corner-left fc-corner-right"><span
+          class="fc-icon fc-icon-left-single-arrow" (click)="PreviousMonth()"></span></button></div>
+    <div class="fc-right"><button type="button"
+        class="fc-next-button fc-button fc-state-default fc-corner-left fc-corner-right"><span
+          class="fc-icon fc-icon-right-single-arrow" (click)="nextMonth()"></span></button></div>
+    <div class="fc-center">
+      <h2>{{thisMonth | date:'MMMM yyyy'}}</h2>
+    </div>
+    <div class="fc-clear"></div>
+  </div>
+  <div class="fc-view-container" style="">
+    <div class="fc-view fc-month-view fc-basic-view" style="">
+      <table class="">
+        <thead class="fc-head">
+          <tr>
+            <td class="fc-head-container fc-widget-header">
+              <div class="fc-row fc-widget-header">
+                <table class="">
+                  <thead>
+                    <tr>
+                      <th class="fc-day-header fc-widget-header fc-sun"><span>Sun</span></th>
+                      <th class="fc-day-header fc-widget-header fc-mon"><span>Mon</span></th>
+                      <th class="fc-day-header fc-widget-header fc-tue"><span>Tue</span></th>
+                      <th class="fc-day-header fc-widget-header fc-wed"><span>Wed</span></th>
+                      <th class="fc-day-header fc-widget-header fc-thu"><span>Thu</span></th>
+                      <th class="fc-day-header fc-widget-header fc-fri"><span>Fri</span></th>
+                      <th class="fc-day-header fc-widget-header fc-sat"><span>Sat</span></th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </thead>
+        <tbody class="fc-body" >
+          <tr>
+            <td class="fc-widget-content" >
+              <div class="fc-scroller fc-day-grid-container" style="overflow: hidden; height: 360px;" >
+                <div class="fc-day-grid fc-unselectable">
+                  <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 60px;"  *ngFor='let index of ListDays'  >
+                    <div class="fc-bg" >
+                      <table class="">
+                        <tbody>
+                          <tr>
+                            <td class="fc-day fc-widget-content fc-sun fc-other-month fc-past" data-date="2017-12-31" >
+                            </td>
+                            <td class="fc-day fc-widget-content fc-mon fc-past" data-date="2018-01-01"></td>
+                            <td class="fc-day fc-widget-content fc-tue fc-past" data-date="2018-01-02"></td>
+                            <td class="fc-day fc-widget-content fc-wed fc-past" data-date="2018-01-03"></td>
+                            <td class="fc-day fc-widget-content fc-thu fc-past" data-date="2018-01-04"></td>
+                            <td class="fc-day fc-widget-content fc-fri fc-past" data-date="2018-01-05"></td>
+                            <td class="fc-day fc-widget-content fc-sat fc-past" data-date="2018-01-06"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="fc-content-skeleton" >
+                      <table>
+                        <thead>
+                          <tr >
+                            <td class="fc-day-top"><span class="fc-day-number">{{index | date : 'dd'}}</span></td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

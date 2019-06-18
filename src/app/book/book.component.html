@@ -1,0 +1,90 @@
+<app-header></app-header>
+<section class="content">
+  <div class="block-header">
+      <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+              <h2>Book Appointment
+              <small>Welcome to Oreo</small>
+              </h2>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+              <ul class="breadcrumb float-md-right">
+                  <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">Appointment</a></li>
+                  <li class="breadcrumb-item active">Book Appointment</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+      <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="card">
+        <div class="header">
+          <h2><strong>Book</strong> Appointment<small>Description text here...</small> </h2>
+          <ul class="header-dropdown">
+                          <li class="remove">
+                              <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                          </li>
+                      </ul>
+        </div>
+        <form class="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="body">
+
+                      <div class="row clearfix">
+                          <div class="col-sm-6">
+                              <div class="input-group">
+
+
+                              <ejs-datepicker style="width:100%;text-align: center;size: 50" id='datepicker' placeholder='Select a date' [value]='value' [min]='minDate' name="date" [(ngModel)]="form.date" #name="ngModel" ></ejs-datepicker>
+
+                             </div>
+                          </div>
+
+                          <div class="col-sm-6">
+                              <select class="form-control show-tick" name="time" [(ngModel)]="form.time" #name="ngModel">
+                                  <option value="">- Time -</option>
+                                  <option>9h-10h</option>
+                                  <option>10h-11h</option>
+                                  <option>11h-12h</option>
+                                  <option>14h-15h</option>
+                                  <option>15h-16h</option>
+                                  <option>16h-17h</option>
+                              </select>
+                          </div>
+
+                      </div>
+                      <div class="row clearfix">
+                          <div class="col-sm-12">
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Enter Your Email">
+                              </div>
+                          </div>
+                          <div class="col-sm-12">
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Phone">
+                              </div>
+                          </div>
+                          <div class="col-sm-12">
+                              <div class="form-group">
+                                  <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                              </div>
+                          </div>
+                          <div class="col-sm-12">
+                              <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                              <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
+                          </div>
+                      </div>
+                  </div>
+                </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="alert alert-success" id="success" hidden="true">
+      <strong>Well done!</strong> You successfully booked and Appointement.
+  </div>
+  <div class="alert alert-danger" id="erreur" hidden="true">
+      <strong>Sorry!</strong> Appointement Already Booked, Please choose another Time.
+  </div>
+</section>

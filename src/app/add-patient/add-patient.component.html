@@ -1,0 +1,183 @@
+
+
+<app-header></app-header>
+
+
+
+<!-- Chat-launcher -->
+<div class="chat-launcher"></div>
+<div class="chat-wrapper">
+  <div class="card">
+      <div class="header">
+          <ul class="list-unstyled team-info margin-0">
+              <li class="m-r-15"><h2>Doctor Team</h2></li>
+              <li>
+                  <img src="../assets/images/xs/avatar2.jpg" alt="Avatar">
+              </li>
+              <li>
+                  <img src="../assets/images/xs/avatar3.jpg" alt="Avatar">
+              </li>
+              <li>
+                  <img src="../assets/images/xs/avatar4.jpg" alt="Avatar">
+              </li>
+              <li>
+                  <img src="../assets/images/xs/avatar6.jpg" alt="Avatar">
+              </li>
+              <li>
+                  <a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a>
+              </li>
+          </ul>
+      </div>
+      <div class="body">
+          <div class="chat-widget">
+          <ul class="chat-scroll-list clearfix">
+              <li class="left float-left">
+                  <img src="../assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
+                  <div class="chat-info">
+                      <a class="name" href="#">Alexander</a>
+                      <span class="datetime">6:12</span>
+                      <span class="message">Hello, John </span>
+                  </div>
+              </li>
+              <li class="right">
+                  <div class="chat-info"><span class="datetime">6:15</span> <span class="message">Hi, Alexander<br> How are you!</span> </div>
+              </li>
+              <li class="right">
+                  <div class="chat-info"><span class="datetime">6:16</span> <span class="message">There are many variations of passages of Lorem Ipsum available</span> </div>
+              </li>
+              <li class="left float-left"> <img src="../assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
+                  <div class="chat-info"> <a class="name" href="#">Elizabeth</a> <span class="datetime">6:25</span> <span class="message">Hi, Alexander,<br> John <br> What are you doing?</span> </div>
+              </li>
+              <li class="left float-left"> <img src="../assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
+                  <div class="chat-info"> <a class="name" href="#">Michael</a> <span class="datetime">6:28</span> <span class="message">I would love to join the team.</span> </div>
+              </li>
+                  <li class="right">
+                  <div class="chat-info"><span class="datetime">7:02</span> <span class="message">Hello, <br>Michael</span> </div>
+              </li>
+          </ul>
+          </div>
+          <div class="input-group p-t-15">
+              <input type="text" class="form-control" placeholder="Enter text here...">
+              <span class="input-group-addon">
+                  <i class="zmdi zmdi-mail-send"></i>
+              </span>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section class="content">
+  <div class="block-header">
+      <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+              <h2>Add Patient
+              <small class="text-muted">Welcome to Oreo</small>
+              </h2>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+              <ul class="breadcrumb float-md-right">
+                  <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">Patient</a></li>
+                  <li class="breadcrumb-item active">Add Patient</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Basic</strong> Information <small>Description text here...</small> </h2>
+                        <ul class="header-dropdown">
+                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                <ul class="dropdown-menu dropdown-menu-right slideUp float-right">
+                                    <li><a href="javascript:void(0);">Edit</a></li>
+                                    <li><a href="javascript:void(0);">Delete</a></li>
+                                    <li><a href="javascript:void(0);">Report</a></li>
+                                </ul>
+                            </li>
+                            <li class="remove">
+                                <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="form" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-4">
+                                <div id="name" class="form-group">
+                                    <input type="text" minlength="4" class="form-control" placeholder="First Name" name="name" [(ngModel)]="form.name" #name="ngModel" (ngModelChange)="CheckName($event)" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="lastname" class="form-group">
+                                    <input  type="text" class="form-control" placeholder="Last Name" name="lastname" [(ngModel)]="form.lastname" #name="ngModel"(ngModelChange)="CheckLastName($event)" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="phone" class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone No." name="phone" [(ngModel)]="form.phone" #name="ngModel" (ngModelChange)="CheckPhone($event)"required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-3">
+                                <div id="address" class="input-group">
+                                    <input  type="text" class="form-control" placeholder="Address" name="address" [(ngModel)]="form.address" #name="ngModel"(ngModelChange)="CheckAddress($event)" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div id="email" class="form-group">
+                                    <input  type="email" class="form-control" placeholder="Enter Your Email" name="email" [(ngModel)]="form.email" #name ="ngModel"(ngModelChange)="CheckEmail($event)" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix" >
+                            <div class="col-lg-12 col-md-12 col-sm-12" >
+                                <form  id="frmFileUpload"  action="/" class="dropzone" enctype="multipart/form-data">
+                                    <div class="dz-message">
+                                        <div class="drag-icon-cph" > <i class="material-icons">touch_app</i> </div>
+                                        <h3>Drag Image here or click to upload.</h3>
+                                        </div>
+                                    <div class="fallback">
+                                          <img [src]="imageSrc" style="max-width:300px;max-height:300px"/>
+                                        <input name="file" type="file" [(ngModel)]="form.image" name="imageUrl"  accept="image/*" (change)="handleInputChange($event)"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div id="description" class="form-group">
+                                    <textarea rows="4"  class="form-control no-resize"  placeholder="Description" name="description" [(ngModel)]="form.description" #name="ngModel" (ngModelChange)="CheckDescription($event)" required></textarea>
+                                </div>
+                            </div>
+                           <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary btn-round" (click)="onSubmit">Submit</button>
+                                <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                    <div id="form-success" hidden class='alert alert-success'>Patient added successfully.</div>
+                    <div id="form-error" hidden class='alert alert-danger'>Change a few things up and try submitting again.</div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+  $(function () {
+  //Datetimepicker plugin
+  $('.datetimepicker').bootstrapMaterialDatePicker({
+      format: 'dddd DD MMMM YYYY - HH:mm',
+      clearButton: true,
+      weekStart: 1
+  });
+});
+</script>
